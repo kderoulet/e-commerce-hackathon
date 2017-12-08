@@ -1,12 +1,11 @@
-const Order = require('../models/score')
+const Order = require('../models/order')
 const Product = require('../models/product')
 
 function getOrder(req, res) {
-    Order.findOne({}, function(err, order) {
-        order.populate("products");
+    Order.findOne().populate("products").exec((err, order) => {
         res.json(order);
-    });
-}
+        })
+    };
 
 function getProducts(req, res) {
     Product.find({}, function(err, products) {
