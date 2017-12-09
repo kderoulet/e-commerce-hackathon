@@ -3,7 +3,7 @@ import ProductRow from './ProductRow'
 
 const ProductTable = (props) => {
     let filteredProducts = props.products.filter(prod => 
-        prod.name.includes(props.search)
+        prod.name.includes(props.search.toLowerCase())
     )
     console.log(props.products);
 

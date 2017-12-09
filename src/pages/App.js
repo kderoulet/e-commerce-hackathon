@@ -41,6 +41,7 @@ class App extends Component {
     return (
       <div>
         <Navbar />
+        <div className="container">
         <Switch>
           <Route exact path='/' render={() =>
             <Home />
@@ -57,6 +58,7 @@ class App extends Component {
             <OrderConfirmation/> 
           } />
         </Switch>
+        </div>
       </div>
     );
   }
