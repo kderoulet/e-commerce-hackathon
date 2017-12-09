@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Switch, Route} from 'react-router-dom';
 import Navbar from '../components/Navbar'
+import Home from '../components/Home'
 import Catalogue from '../pages/catalogue'
 import Checkout from '../pages/checkout'
 import OrderConfirmation from '../pages/order-confirmation'
@@ -11,8 +12,16 @@ class App extends Component {
     super(props);
     this.state = {
       products: [],
-      order: {}
+      order: {},
+      search: ""
     }
+  }
+
+
+  // event listeners
+
+  updateSearch = (e) => {
+    this.setState({search: e.target.value})
   }
 
   // Lifecycle methods
@@ -34,10 +43,15 @@ class App extends Component {
         <Navbar />
         <Switch>
           <Route exact path='/' render={() =>
-            <div/>
+            <Home />
           } />
           <Route exact path="/catalogue" render={() =>
-            <Catalogue/>
+            <Catalogue
+              updateSearch={this.updateSearch}
+              products={this.state.products}
+              order={this.state.order}
+              search={this.state.search}
+              />
           } />
           <Route exact path="/checkout" render={() =>
             <OrderConfirmation/> 
