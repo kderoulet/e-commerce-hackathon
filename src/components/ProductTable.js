@@ -13,7 +13,8 @@ const ProductTable = (props) => {
             </thead>
             <tbody>
                 {filteredProducts.map((product, idx) => 
-                <ProductRow 
+                <ProductRow
+                    addProduct={props.addProduct}
                     product={product}
                     key={idx}
                 />

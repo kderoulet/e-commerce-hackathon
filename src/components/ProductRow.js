@@ -8,7 +8,7 @@ const ProductRow = (props) => {
             <td>
                 <div className="row">
                     <div className="col-8 mx-2">{props.product.description}</div>
-                    <div className="col-1 mx-1"> <button>+</button> </div>
+                    <div className="col-1 mx-1"> <button value={props.product._id} onClick={(e) => {props.addProduct(e)}}>+</button> </div>
                     <div className="col-1 mx-1"><button>-</button> </div>
                 </div>
             </td>

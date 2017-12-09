@@ -20,6 +20,17 @@ class App extends Component {
 
   // event listeners
 
+  addProduct = (e) => {
+    // fetch('/api/addProduct', {
+    //   method: 'POST',
+    //   headers: new Headers({'Content-Type': 'application/json'}),
+    //   body: JSON.stringify({id: e.target.value})
+    // }).then(res => res.json()).then((order) => {
+    //   this.setState({order})
+    // })
+    console.log('WDI ROCKS')
+  }
+
   updateSearch = (e) => {
     this.setState({search: e.target.value})
   }
@@ -48,6 +59,7 @@ class App extends Component {
           } />
           <Route exact path="/catalogue" render={() =>
             <Catalogue
+              addProduct={this.addProduct}
               updateSearch={this.updateSearch}
               products={this.state.products}
               order={this.state.order}

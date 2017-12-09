@@ -11,6 +11,7 @@ const Catalogue = (props) => {
             search={props.search}
             />
             <ProductTable
+            addProduct={props.addProduct}
             search={props.search}
             products={props.products}
             order={props.order}
